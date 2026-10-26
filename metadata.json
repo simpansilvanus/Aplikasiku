@@ -1,0 +1,8 @@
+{
+  "name": "Remix Laporan Keuangan BUMDes Excel \u0026 BKU",
+  "description": "Aplikasi pembukuan dan laporan keuangan BUMDes standar Kemendesa format spreadsheet Excel lengkap dengan Buku Kas Umum (BKU), Buku Bank, Laba Rugi, Neraca, dan ekspor .xlsx.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@layer base {
+  /* Standar Tipografi Resmi Dokumen BUMDes: Jenis Huruf Arial */
+  #printable-content,
+  #printable-content *,
+  #official-receipt,
+  #official-receipt * {
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif !important;
+  }
+
+  /* Kop Surat: Ukuran Huruf 14 */
+  .kop-surat-header,
+  .kop-surat-header *,
+  .kop-surat-title {
+    font-size: 14pt !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Isi Teks Dokumen: Ukuran Huruf 12 */
+  #printable-content,
+  #official-receipt {
+    font-size: 12pt;
+  }
+
+  @media print {
+    @page {
+      size: legal;
+      margin: 10mm 12mm;
+    }
+
+    body {
+      background-color: white !important;
+      color: black !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif !important;
+      font-size: 12pt !important;
+    }
+
+    .print\:hidden {
+      display: none !important;
+    }
+
+    .break-after-page,
+    .page-break-after {
+      page-break-after: always !important;
+      break-after: page !important;
+    }
+
+    .break-inside-avoid,
+    .page-break-inside-avoid {
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
+    }
+
+    table {
+      page-break-inside: auto;
+      width: 100% !important;
+    }
+
+    tr {
+      page-break-inside: avoid;
+      page-break-after: auto;
+    }
+
+    thead {
+      display: table-header-group;
+    }
+
+    tfoot {
+      display: table-footer-group;
+    }
+
+    img {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    /* Modal layout overrides when printing so all pages flow to physical printer spooler */
+    .print-modal-overlay,
+    .print-modal-wrapper {
+      position: static !important;
+      inset: auto !important;
+      width: 100% !important;
+      max-width: none !important;
+      height: auto !important;
+      max-height: none !important;
+      overflow: visible !important;
+      background: transparent !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      border: none !important;
+      box-shadow: none !important;
+      border-radius: 0 !important;
+    }
+
+    .print-modal-canvas-area {
+      overflow: visible !important;
+      height: auto !important;
+      max-height: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      background: transparent !important;
+    }
+
+    #printable-content {
+      transform: none !important;
+      box-shadow: none !important;
+      border: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      max-width: 100% !important;
+      width: 100% !important;
+    }
+
+    .bg-\[\#107c41\] {
+      background-color: #107c41 !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    .official-signatures-container {
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
+    }
+  }
+}
+
